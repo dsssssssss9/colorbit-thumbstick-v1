@@ -1,11 +1,15 @@
 input.onPinPressed(TouchPin.P1, function () {
-    basic.showIcon(IconNames.Heart)
-    basic.pause(100)
+    colorbit_51bit.setMultiColor(true)
+    colorbit_51bit.showColorIcon(ColorIcon.ChristmasTree, colorbit.colors(BitColors.Red))
+    basic.pause(500)
+    colorbit_51bit.setMultiColor(false)
+    colorbit_51bit.clear()
 })
-let colorbit_51bit = colorbit.initColorBit(DigitalPin.P16, BitColorMode.RGB)
+let colorbit_51bit: colorbit.Strip = null
+colorbit_51bit = colorbit.initColorBit(DigitalPin.P16, BitColorMode.RGB)
 colorbit_51bit.setBrightness(32)
+colorbit_51bit.showScrollStringColor("3 2 1", colorbit.colors(BitColors.Red))
 colorbit_51bit.clear()
-colorbit_51bit.showColorIcon(ColorIcon.ChristmasTree, colorbit.colors(BitColors.Red))
 basic.forever(function () {
     colorbit_51bit.drawColorBit(pins.map(
     pins.analogReadPin(AnalogPin.P0),
