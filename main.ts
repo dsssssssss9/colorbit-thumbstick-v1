@@ -2,6 +2,10 @@ input.onPinPressed(TouchPin.P1, function () {
     basic.showIcon(IconNames.Heart)
     basic.pause(100)
 })
+let colorbit_51bit = colorbit.initColorBit(DigitalPin.P16, BitColorMode.RGB)
+colorbit_51bit.setBrightness(32)
+colorbit_51bit.clear()
+colorbit_51bit.showColorIcon(ColorIcon.ChristmasTree, colorbit.colors(BitColors.Red))
 basic.forever(function () {
     led.plot(pins.map(
     pins.analogReadPin(AnalogPin.P0),
