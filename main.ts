@@ -7,7 +7,7 @@ colorbit_51bit.setBrightness(32)
 colorbit_51bit.clear()
 colorbit_51bit.showColorIcon(ColorIcon.ChristmasTree, colorbit.colors(BitColors.Red))
 basic.forever(function () {
-    led.plot(pins.map(
+    colorbit_51bit.drawColorBit(pins.map(
     pins.analogReadPin(AnalogPin.P0),
     1023,
     0,
@@ -19,7 +19,7 @@ basic.forever(function () {
     1023,
     0,
     5
-    ))
+    ), colorbit.colors(BitColors.Blue))
     basic.pause(100)
-    basic.clearScreen()
+    colorbit_51bit.clear()
 })
