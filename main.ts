@@ -1,4 +1,4 @@
-input.onPinPressed(TouchPin.P0, function () {
+input.onPinPressed(TouchPin.P1, function () {
 	
 })
 pins.onPulsed(DigitalPin.P0, PulseValue.High, function () {
@@ -7,7 +7,6 @@ pins.onPulsed(DigitalPin.P0, PulseValue.High, function () {
 input.onPinReleased(TouchPin.P1, function () {
     basic.showIcon(IconNames.Heart)
     basic.pause(100)
-    basic.clearScreen()
 })
 basic.forever(function () {
     led.plot(pins.map(
